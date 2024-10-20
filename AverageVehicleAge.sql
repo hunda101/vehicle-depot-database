@@ -1,0 +1,13 @@
+DELIMITER $$
+
+CREATE FUNCTION CountDrivers() 
+RETURNS INT
+DETERMINISTIC
+READS SQL DATA
+BEGIN
+    DECLARE driver_count INT;
+    SELECT COUNT(*) INTO driver_count FROM Drivers;
+    RETURN driver_count;
+END $$
+
+DELIMITER ;
